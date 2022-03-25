@@ -124,7 +124,13 @@ def gp(message):
         res = scraper.post(final_url, data=data, headers=h).json()
 
         return res
-    bot.reply_to(message, gplinks_bypass(url)["url"])
+    out =  gplinks_bypass(url)
+    if out == None :
+       bot.reply_to(message,"no")
+    else :
+       gplinks_bypass(url)["url"]
+       
+    
 
 # droplink url
 @bot.message_handler(commands=['dl'])
