@@ -13,14 +13,11 @@ import telebot
  
 
 
-TOKEN = '5112623870:AAGWDhuBVEzLfVaTR3cBtwx4J_KoQSOF_lo' 
+TOKEN = '5112623870:AAFTiyiYfNUxHNDyklZfZTTEyMePsL8Fe18' 
 bot = telebot.TeleBot(TOKEN) 
 server = Flask(__name__) 
 appname= "link-bypasser"
  
-
-
-
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
@@ -132,7 +129,7 @@ def gp(message):
 
 # droplink url
 @bot.message_handler(commands=['dl'])
-def dl(message):
+def af(message):
     url = message.text.split("/dl ")[1]
     print("You Have Entered:")
     print(url)
@@ -167,7 +164,7 @@ def dl(message):
 
 # linkvertise short url
 @bot.message_handler(commands=['lv'])
-def lv(message):
+def af(message):
     def lv_bypass(url):
         client = requests.Session()
         
@@ -222,6 +219,7 @@ def lv(message):
     bot.reply_to(message, lv_bypass(url))
 
 
+print("server starting")
 
 
 
