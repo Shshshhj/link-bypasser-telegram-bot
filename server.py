@@ -161,11 +161,11 @@ def af(message):
         p = urlparse(url)
         final_url = f'{p.scheme}://{p.netloc}/links/go'
 
-        time.sleep(3.1)
-        res = client.post(final_url, data=data, headers=h).json()
+       #time.sleep(3.1)
+        res = client.post(final_url, data=data, headers=h)#.json()
 
         return res
-    bot.reply_to(message, droplink_bypass(url)["url"])
+    bot.reply_to(message, droplink_bypass(url))
 
 # linkvertise short url
 @bot.message_handler(commands=['lv'])
