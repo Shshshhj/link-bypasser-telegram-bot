@@ -20,7 +20,6 @@ appname= "link-bypasser"
  
 
 
-bot = telebot.TeleBot(TOKEN)
 
 
 @bot.message_handler(commands=['start'])
@@ -133,7 +132,7 @@ def gp(message):
 
 # droplink url
 @bot.message_handler(commands=['dl'])
-def af(message):
+def dl(message):
     url = message.text.split("/dl ")[1]
     print("You Have Entered:")
     print(url)
@@ -168,7 +167,7 @@ def af(message):
 
 # linkvertise short url
 @bot.message_handler(commands=['lv'])
-def af(message):
+def lv(message):
     def lv_bypass(url):
         client = requests.Session()
         
@@ -223,7 +222,7 @@ def af(message):
     bot.reply_to(message, lv_bypass(url))
 
 
-print("server started")
+
 
 
 @server.route('/' + TOKEN, methods=['POST']) 
@@ -237,9 +236,9 @@ def getMessage():
 @server.route("/") 
 def webhook(): 
     bot.remove_webhook() 
-    bot.set_webhook(url=f'https://{appname}.herokuapp.com/' + TOKEN) 
+    bot.set_webhook(url='https://link-bypasser.herokuapp.com/' + TOKEN) 
     return 
  
  
-if __name__ == "__main__": 
-    server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
+print("server started")
+server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
