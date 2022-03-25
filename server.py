@@ -10,11 +10,9 @@ from urllib.parse import urlparse
 import time
 import json
 import telebot
- 
 
-
-TOKEN = '5112623870:AAFTiyiYfNUxHNDyklZfZTTEyMePsL8Fe18' 
-bot = telebot.TeleBot(TOKEN) 
+#TOKEN = '5112623870:AAFTiyiYfNUxHNDyklZfZTTEyMePsL8Fe18' 
+bot = telebot.TeleBot(5112623870:AAFTiyiYfNUxHNDyklZfZTTEyMePsL8Fe18) 
 server = Flask(__name__) 
 appname= "link-bypasser"
  
