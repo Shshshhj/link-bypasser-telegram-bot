@@ -11,7 +11,7 @@ import time
 import json
 import telebot
 
-TOKEN = '5112623870:AAFTiyiYfNUxHNDyklZfZTTEyMePsL8Fe18' 
+TOKEN = 'YOUR BOT TOKEN' 
 bot = telebot.TeleBot(TOKEN) 
 print("1st step")
 server = Flask(__name__) 
